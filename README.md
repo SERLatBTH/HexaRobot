@@ -34,6 +34,8 @@ Here you can see the included components and their locations.
 ## How To Make It Works
 
 ### Activation
+Activation is required only once when the device is first used, after that you just need to follow the instructions on how to connect it to your mobile. If the device is already activated you can move on to the next section.
+
 1. Download HEXA App for your mobile device from [here](https://www.vincross.com/download-hexa-app), upon downloading, you will be guided through setup and on-boarding. You must have a Wi-Fi network to provide an internet connection for both your HEXA and mobile device during initial setup.
 2. Open HEXA App while your mobile device is connected to a Wi-Fi network, and press "Let's get started!"
 3. Turn on HEXA’s power button located on its posterior side. The power light will turn a steady green to indicate it is on.
@@ -59,7 +61,7 @@ Follow the steps below to connect:
 #### Using Direct link Mode to connect to HEXA.
 Direct Link mode is designed for outdoor use or for environments where no Wi-Fi network exists. Under Direct Link mode, HEXA becomes a Wi-Fi hotspot. Once your mobile device connects to this hotspot, it can connect to HEXA through the HEXA App.
 Follow the steps below to connect:
-1. When you turn on HEXA and there is no available Wi-Fi network, the head light will shortly appear light purple before it blinks yellow, and it will finally stay in steady purple light. You are able to connect with HEXA using Direct Link mode when the head light is yellow or purple. (NOTE：Even when HEXA is connected to Wi-Fi, you can switch to Direct Link mode by visiting "Settings" in the HEXA App.)
+1. When you turn on HEXA and there is no available Wi-Fi network, the head light will shortly appear light purple before it blinks yellow, and it will finally stay in steady purple light. You are able to connect with HEXA using Direct Link mode when the head light is yellow or purple. (Note ：Even when HEXA is connected to Wi-Fi, you can switch to Direct Link mode by visiting "Settings" in the HEXA App.)
 2. Open your mobile device’s network settings. Among the available networks, select the network that is named HEXA-followed by a 12-digit number combination. Press “Connect” and enter the password which is the last 8 digits of the network name.
 3. Open HEXA App. The icon indicates HEXA is under Direct Link mode. Click the HEXA's name and connect to it. You will then be able to enter HEXA Launcher.
 
@@ -75,5 +77,46 @@ This robots functionalities are presented as skills. A “Skill” is an applica
 + Download more Skills: HEXA is an open platform. We welcome you to share your inspirations and publish your own Skills. You can also enter the Skill Store from within the HEXA App to browse and download additional Skills, giving HEXA more capabilities and possibilities
 
 ## SDK
+
+### MIND SDK
+HEXA’s operating system is called MIND. With MIND SDK, developers will be able to develop Skills for HEXA and empower it to do almost anything you can imagine. Visit [Vincross Developer Center](https://developer.vincross.com/developer/introduction/mind-overview) for more information about MIND SDK, its documentation, and tutorials
+
+#### Windows
+
+1. Install Docker: Vincross uses Docker in order to manage the SDK libraries and dependencies. If you don't have Docker you can download it using these [instructions](https://docs.docker.com/engine/installation/).
+2. Download the windows version of [MIND](https://cdn-static.vincross.com/downloads/mind/latest/windows-x86_64/mind.exe)
+3. Run Powershell as Administrator
+4. Copy mind.exe into your PATH
+```
+    > Copy c:\directory\where\mind\downloaded\in\step\2\mind.exe .
+```
+5. Execute mind upgrade. This pulls all the needed dependencies from Docker. The first time you run it, it may take a while
+```
+    > mind upgrade
+```
+6. Open Windows Firewall and allow incoming ports TCP/8888 and TCP/7597
+   1. Add inbound rule
+   2. Select TCP
+   3. Specify local ports: 8888
+   4. Repeat the previous steps and create new rule for the other port number 7597
+7. Now you will be able to use mind from your Powershell account.
+8. Finally, you'll need to configure mind to use your [Developer Bridge](https://developer.vincross.com/bridge) account. If you don't have an account you can create an account by going [here](https://www.vincross.com/en/login?back=https%3A%2F%2Fdeveloper.vincross.com%2Fen%2F)
+```
+$ mind login <youremail> <yourpassword>
+```
+### Example Skills
+
+[Here](https://documentation.vincross.com/Development/exampleskills.html) is a list of skills example code with tutorial you can follow to build your first skill.
+
+### MIND Studio
+To create skills for MIND platform you will need MIND Studio which is available for download for Windows, MacOS and Linux.
+
+### Developer Bridge
+With Developer Bridge, developers are able to distribute their Skills via the Skill Store. Visit [https://developer.vincross.com/developer/bridge](https://developer.vincross.com/developer/bridge) to  become a Vincross developer.
+
+## Developer Forum
+In the Vincross Forum Development Discussion section, you can find peers to discuss, to inspire, and to create with. Visit
+[https://forum.vincross.com/developer](https://forum.vincross.com/developer) to join the community.
+
 
 To get started you will need to visit the [developer website](https://developer.vincross.com/en) and create an account.
