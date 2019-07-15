@@ -22,6 +22,14 @@ Storage room - shelve A1
 
 ## In The Box
 
+Here you can see the included components and their locations.
+1. Instruction
+2. Charger
+3. Hexa Robot
+![alt text](/images/box.jpg)
+![alt text](images/instruction.jpg)
+![alt text](images/contents.jpg)
+
 ## How To Make It Works
 
 
