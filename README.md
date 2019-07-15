@@ -1,5 +1,7 @@
 # Hexa Robot
 
+HEXA is an all-terrain hexapod robot designed and developed by Vincross Inc. It comes equipped with basic motion capacities such as walking, climbing, and passing through caves. It is also equipped with multiform interfaces such as a built-in camera, infrared transmitter, and a distance measuring sensor. Furthermore, HEXA is running MIND, a Linux-based OS,
+which allows developers to easily program their robot. Various hardware ports are available including USB, audio input and output, I²C, ADC, GPIO, and 5V/3.3V power output.
 
 ## Content
 
