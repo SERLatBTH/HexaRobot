@@ -87,13 +87,13 @@ HEXA’s operating system is called MIND. With MIND SDK, developers will be able
 2. Download the windows version of [MIND](https://cdn-static.vincross.com/downloads/mind/latest/windows-x86_64/mind.exe)
 3. Run Powershell as Administrator
 4. Copy mind.exe into your PATH
-```
-    > Copy c:\directory\where\mind\downloaded\in\step\2\mind.exe .
-```
+   ```
+    $ Copy c:\directory\where\mind\downloaded\in\step\2\mind.exe .
+   ```
 5. Execute mind upgrade. This pulls all the needed dependencies from Docker. The first time you run it, it may take a while
-```
-    > mind upgrade
-```
+   ```
+   $ mind upgrade
+   ```
 6. Open Windows Firewall and allow incoming ports TCP/8888 and TCP/7597
    1. Add inbound rule
    2. Select TCP
@@ -101,22 +101,66 @@ HEXA’s operating system is called MIND. With MIND SDK, developers will be able
    4. Repeat the previous steps and create new rule for the other port number 7597
 7. Now you will be able to use mind from your Powershell account.
 8. Finally, you'll need to configure mind to use your [Developer Bridge](https://developer.vincross.com/bridge) account. If you don't have an account you can create an account by going [here](https://www.vincross.com/en/login?back=https%3A%2F%2Fdeveloper.vincross.com%2Fen%2F)
+    ```
+    $ mind login <youremail> <yourpassword>
+    ```
+
+#### MacOS and Linux
+1. Install Docker: Vincross uses Docker in order to manage the SDK libraries and dependencies. If you don't have Docker you can download it using these [instructions](https://docs.docker.com/engine/installation/).
+2. Install mind sdk by downloading it and making it excutable by running the commands below
+        ```
+        $sudo curl -o /usr/local/bin/mind https://cdn-static.vincross.com/downloads/mind/latest/mind-`uname -s`-`uname -m`
+        $sudo chmod +x /usr/local/bin/mind
+        ```
+3. Now you can run mind by typing mind in the terminal and you will get a list of available commands
+```
+$ mind
+MIND Command-line Interface v0.5.3
+
+Usage:
+  mind [command]
+
+Available Commands:
+  build                Build a Skill
+  flight-test          Flight test a Skill on mobile device
+  get-default-robot    Returns the name of the default robot
+  get-default-robot-ip Returns the IP of the default robot
+  init                 Initialize and scaffold a new Skill
+  login                Authenticate yourself
+  pack                 Pack a Skill
+  run                  Run Skill on robot
+  scan                 Scan your network or specific IP for robots
+  set-default-robot    Set the default robot name
+  upgrade              Upgrades mindcli container to latest version
+  x                    Run a command inside of a cross-compiling capable docker container
+
+Use "mind [command] --help" for more information about a command.
+```
+
+To get help for any command you can run mind [command] --help for example
+```
+$ mind upgrade --help
+Upgrades mindcli container to latest version
+
+Usage:
+  mind upgrade [flags]
+```
+4. Install and initialize MIND CLI Docker image by simply running the command mind upgrade in the terminal
+```
+$ mind upgrade
+```
+5. Configure mind to use your [Developer Bridge](https://developer.vincross.com/bridge) account
 ```
 $ mind login <youremail> <yourpassword>
 ```
+6. After you've initialized the mind CLI, you can start creating [your first Skill](https://documentation.vincross.com/Development/yourfirstskill.html).
+
 ### Example Skills
 
 [Here](https://documentation.vincross.com/Development/exampleskills.html) is a list of skills example code with tutorial you can follow to build your first skill.
 
 ### MIND Studio
 To create skills for MIND platform you will need MIND Studio which is available for download for Windows, MacOS and Linux.
-
-### Developer Bridge
-With Developer Bridge, developers are able to distribute their Skills via the Skill Store. Visit [https://developer.vincross.com/developer/bridge](https://developer.vincross.com/developer/bridge) to  become a Vincross developer.
-
-## Developer Forum
-In the Vincross Forum Development Discussion section, you can find peers to discuss, to inspire, and to create with. Visit
-[https://forum.vincross.com/developer](https://forum.vincross.com/developer) to join the community.
 
 
 To get started you will need to visit the [developer website](https://developer.vincross.com/en) and create an account.
